@@ -1,11 +1,4 @@
-/*
- * chapter-09-exercise-03.cpp
- *
- * ODE solver w/ error handling
- *
- * Created on: Nov 15th, 2012
- * 	   Author: Radu Popescu <radu.popescu@epfl.ch>
- */
+
 
 #include <cstdlib>
 #include <fstream>
