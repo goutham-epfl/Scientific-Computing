@@ -5,9 +5,8 @@
 #include <iostream>
 
 #include "AbstractOdeSolver.hpp"
-#include "Exception.hpp"
 #include "ForwardEulerSolver.hpp"
-#include "RungeKuttaSolver.hpp"
+
 
 double fRhs(double y, double t) { return -100.0 * y; }
 
@@ -60,18 +59,7 @@ int main(int argc, char *argv[]) {
   delete pSolver;
   std::cout << "Solution complete." << std::endl;
 
-  double stepSizeRK = std::atof(argv[2]);
-  pSolver = new RungeKuttaSolver;
-  pSolver->SetInitialValue(initialValue);
-  pSolver->SetTimeInterval(initialTime, finalTime);
-  pSolver->SetStepSize(stepSizeRK);
-  pSolver->SetRightHandSide(fRhs);
-
-  std::cout << "Solving with Runge Kutta method" << std::endl;
-  std::ofstream RKSolutionFile;
-  trySolve(pSolver, RKSolutionFile, "solution_rk.dat");
-  delete pSolver;
-  std::cout << "Solution complete." << std::endl;
+  
 
   return 0;
 }
